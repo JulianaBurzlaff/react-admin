@@ -1,12 +1,12 @@
 import React from "react";
 import { Admin, Resource } from "react-admin";
-import restProvider from "ra-data-simple-rest";
+import jsonServerProvider from "ra-data-json-server";
 import { PaymentList, PaymentCreate, PaymentEdit } from "./components/Payment";
 import { SalesList, SalesCreate, SalesEdit } from "./components/Sales";
 
 function App() {
   return (
-    <Admin dataProvider={restProvider("http://localhost:3000")}>
+    <Admin dataProvider={jsonServerProvider("http://localhost:3000")}>
       <Resource
         name="payment"
         list={PaymentList}
