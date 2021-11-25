@@ -1,0 +1,52 @@
+{
+  "payment": [
+    {
+      "id": "1",
+      "type": "Dinheiro"
+    },
+    {
+      "id": "2",
+      "type": "Cartão de débito"
+    },
+    {
+      "type": "Cartão de crédito",
+      "id": "VrUYMlc"
+    },
+    {
+      "type": "Pix",
+      "id": "FFN43ky"
+    }
+  ],
+  "sales": [
+    {
+      "paymentId": "FFN43ky",
+      "value": 30,
+      "date": "2021-11-23",
+      "id": "KOb1GXo"
+    },
+    {
+      "paymentId": "2",
+      "value": 25,
+      "date": "2021-11-15",
+      "id": "Soc-mwY"
+    },
+    {
+      "value": 14,
+      "date": "2021-11-08",
+      "paymentId": "1",
+      "id": "U8imTi5"
+    },
+    {
+      "value": 45,
+      "paymentId": "VrUYMlc",
+      "date": "2021-10-20",
+      "id": "4xmXJLY"
+    },
+    {
+      "value": 16,
+      "date": "2021-10-04",
+      "paymentId": "2",
+      "id": "mrgPpiY"
+    }
+  ]
+}
