@@ -9739,6 +9739,14 @@ ra-core@^3.19.3:
     query-string "^5.1.1"
     reselect "~3.0.0"
 
+ra-data-json-server@^3.19.3:
+  version "3.19.3"
+  resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-3.19.3.tgz#1ddf15bf6666bdf5084b99d936a47e915aa57f86"
+  integrity sha512-THBo39tW847tWUDMaLSlrfh+WBDe2d85TRKb3fgqWlIMDb/RQ4JptRaNq1UY4LyHZh1THyKqOC02fTsHJNXDMg==
+  dependencies:
+    query-string "^5.1.1"
+    ra-core "^3.19.3"
+
 ra-data-simple-rest@^3.19.2:
   version "3.19.3"
   resolved "https://registry.yarnpkg.com/ra-data-simple-rest/-/ra-data-simple-rest-3.19.3.tgz#5a4c21e738c0544638b8c6355c413a1ecce9c1dc"
