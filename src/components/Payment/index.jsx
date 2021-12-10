@@ -9,6 +9,7 @@ import {
   Edit,
   SimpleForm,
   TextInput,
+  required,
 } from "react-admin";
 
 export const PaymentList = (props) => {
@@ -25,9 +26,9 @@ export const PaymentList = (props) => {
 
 export const PaymentCreate = (props) => {
   return (
-    <Create title="Cadastrar método de pagamento" {...props}>
+    <Create title="Register new payment method" {...props}>
       <SimpleForm redirect="/payment">
-        <TextInput source="type" />
+        <TextInput source="type" validate={required()} />
       </SimpleForm>
     </Create>
   );
@@ -35,9 +36,9 @@ export const PaymentCreate = (props) => {
 
 export const PaymentEdit = (props) => {
   return (
-    <Edit title="Editar método de pagamento" {...props}>
+    <Edit title="Edit payment method" {...props}>
       <SimpleForm redirect="/payment">
-        <TextInput source="type" />
+        <TextInput source="type" validate={required()} />
       </SimpleForm>
     </Edit>
   );
