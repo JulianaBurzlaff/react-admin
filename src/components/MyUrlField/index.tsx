@@ -14,7 +14,11 @@ const useStyles = makeStyles({
   },
 });
 
-const MyUrlField = ({ source }) => {
+type Props = {
+  source: string;
+};
+
+const MyUrlField = ({ source }: Props) => {
   const record = useRecordContext();
   const classes = useStyles();
   return record ? (

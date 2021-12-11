@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   List,
   Datagrid,
@@ -10,9 +10,12 @@ import {
   SimpleForm,
   TextInput,
   required,
+  ListProps,
+  EditProps,
+  CreateProps,
 } from "react-admin";
 
-export const PaymentList = (props) => {
+export const PaymentList: FC<ListProps> = (props) => {
   return (
     <List {...props}>
       <Datagrid>
@@ -24,7 +27,7 @@ export const PaymentList = (props) => {
   );
 };
 
-export const PaymentCreate = (props) => {
+export const PaymentCreate: FC<CreateProps> = (props) => {
   return (
     <Create title="Register new payment method" {...props}>
       <SimpleForm redirect="/payment">
@@ -34,7 +37,7 @@ export const PaymentCreate = (props) => {
   );
 };
 
-export const PaymentEdit = (props) => {
+export const PaymentEdit: FC<EditProps> = (props) => {
   return (
     <Edit title="Edit payment method" {...props}>
       <SimpleForm redirect="/payment">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   Create,
   Edit,
@@ -16,9 +16,13 @@ import {
   number,
   regex,
   email,
+  ListProps,
+  EditProps,
+  CreateProps,
 } from "react-admin";
 import MyUrlField from "../MyUrlField";
 import { useMediaQuery } from "@material-ui/core";
+import { Theme } from "@mui/system";
 
 const validateRequired = required();
 const validateEmail = [required(), email()];
@@ -35,8 +39,10 @@ const clientFilter = [
   </ReferenceInput>,
 ];
 
-export const ClientList = (props) => {
-  const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+export const ClientList: FC<ListProps> = (props) => {
+  console.log(props);
+
+  const isSmall = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <List filters={clientFilter} {...props}>
       {isSmall ? (
@@ -57,7 +63,7 @@ export const ClientList = (props) => {
   );
 };
 
-export const ClientCreate = (props) => (
+export const ClientCreate: FC<CreateProps> = (props) => (
   <Create title="Regiter new client" {...props}>
     <SimpleForm redirect="/client">
       <TextInput label="Name" source="name" validate={validateRequired} />
@@ -107,11 +113,15 @@ export const ClientCreate = (props) => (
   </Create>
 );
 
-const EditTitle = ({ record }) => {
+type Props = {
+  record?: any;
+};
+
+const EditTitle = ({ record }: Props) => {
   return <span>Edit client {record ? `"${record.name}"` : ""}</span>;
 };
 
-export const ClientEdit = (props) => (
+export const ClientEdit: FC<EditProps> = (props) => (
   <Edit title={<EditTitle />} {...props}>
     <SimpleForm redirect="/client">
       <TextInput label="Name" source="name" validate={validateRequired} />

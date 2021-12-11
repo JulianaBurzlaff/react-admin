@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   Create,
   Edit,
@@ -17,11 +17,15 @@ import {
   EditButton,
   DeleteButton,
   required,
+  ListProps,
+  EditProps,
+  CreateProps,
 } from "react-admin";
 import { useMediaQuery } from "@material-ui/core";
+import { Theme } from "@mui/system";
 
-export const SalesList = (props) => {
-  const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+export const SalesList: FC<ListProps> = (props) => {
+  const isSmall = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <List {...props}>
       {isSmall ? (
@@ -68,7 +72,7 @@ export const SalesList = (props) => {
   );
 };
 
-export const SalesCreate = (props) => {
+export const SalesCreate: FC<CreateProps> = (props) => {
   return (
     <Create title="Register new sale" {...props}>
       <SimpleForm redirect="/sales">
@@ -97,7 +101,7 @@ export const SalesCreate = (props) => {
   );
 };
 
-export const SalesEdit = (props) => {
+export const SalesEdit: FC<EditProps> = (props) => {
   return (
     <Edit title="Edit sale" {...props}>
       <SimpleForm redirect="/sales">
